@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello world</title>
+  <meta charset="utf-8">
+  </head>
+  <body>
+  </body>
+
+  <script>
+
+  class MyString {
+    reverse(string) {
+      var reversed = '';
+      var length = string.length;
+      for(var i=length-1;i>=0; i--) {
+        reversed += string.charAt(i);
+      }
+      return reversed;
+    }
+    ucFirst(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+    ucWords(string) {
+      var words = string.split(" ");
+      var newStr ="";
+      for(var i=0; i< words.length; i++) {
+        newStr += words[i].charAt(0).toUpperCase() + words[i].slice(1);
+        if(i != words.length -1 ) {
+          newStr += " ";
+        }
+      }
+      return newStr;
+    }
+  }
+
+  var myString = new MyString();
+
+  console.log(myString.ucWords('nadya nad hello'));
+  console.log(myString.reverse('NADYA'));
+
+  </script>
+</html>
