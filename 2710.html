@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hello world</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="main.css">
+
+		</head>
+		
+	<body>
+	</body>
+<script>
+	class User {
+		constructor (name, surname) {
+			this.name=name;
+			this.surname=surname;
+		}
+		getfullname () {
+			return this.name+ " " + this.surname;
+		}
+	}
+	 
+	 class Student extends User {
+	 	constructor (name, surname, year) {
+	 		super(name, surname);
+	 		this.year=year;
+	 	}
+	 	getcurse() {
+	 		return (new Date()).getFullYear() - this.year;
+	 	}
+	 	getfullname() {
+	 		return super.getfullname();
+	 	}
+	 }
+
+	 var student = new Student('Иван', "Иванов", 2014);
+	 console.log(student.name);
+	 console.log(student.surname);
+	 console.log(student.getfullname());
+	 console.log(student.year);
+	 console.log(student.getcurse());
+</script>
+
+</html>
